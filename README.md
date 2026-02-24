@@ -1,58 +1,94 @@
 # Inventory Management
 
-## Pages & Features
+Track inventory levels, orders, and stock movements.
 
-### 1. Dashboard
-- Total SKU count, stock value, low-stock alerts
-- Stock movement chart (in vs. out over time)
-- Top selling / fastest moving items
-- Warehouse utilization overview
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Products
-- Product catalog with search, category, and status filters
-- Product detail: name, SKU, description, images, pricing
-- Add / edit / delete products
-- Variant management (size, color, etc.)
-- Barcode / QR code generation
+## Tech Stack
 
-### 3. Stock Levels
-- Current stock per product & warehouse
-- Low-stock & out-of-stock alerts
-- Reorder point configuration
-- Batch & expiry date tracking
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Stock Movements
-- Record stock in (purchase, return, adjustment)
-- Record stock out (sale, transfer, write-off)
-- Movement history with filters (date, type, product)
-- Bulk import movements via CSV
+## Getting Started
 
-### 5. Warehouses / Locations
-- Manage multiple warehouse locations
-- Warehouse detail: address, capacity, assigned products
-- Transfer stock between warehouses
-- Location-based stock breakdown
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Suppliers
-- Supplier directory with contact info
-- Link suppliers to products
-- Purchase history per supplier
-- Supplier performance metrics
+## License
 
-### 7. Purchase Orders
-- Create & send purchase orders to suppliers
-- PO approval workflow
-- Track PO status (draft → sent → received → closed)
-- Auto-generate PO from low-stock alerts
+MIT © Mehdi Nabhani
 
-### 8. Reports
-- Inventory valuation report
-- Stock movement summary
-- Aging / slow-moving inventory
-- Export reports as PDF / CSV
+---
 
-### 9. Settings
-- Units of measure configuration
-- Category & tag management
-- Notification preferences (alerts, thresholds)
-- User roles & permissions
+<details>
+<summary>📋 Original Feature Spec</summary>
+
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
